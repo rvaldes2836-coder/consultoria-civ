@@ -1539,18 +1539,49 @@
 <div class="section-divider"><hr></div>
 
 <!-- CTA FINAL -->
-<section id="contacto">
-  <div class="cta-section">
-    <div class="cta-block">
-      <div>
-        <p class="cta-label">// Primer paso</p>
-        <h2 class="cta-title">Los problemas críticos no esperan. Nosotros tampoco.</h2>
-        <p class="cta-sub">Toda consulta es tratada con absoluta confidencialidad. Respondemos en menos de 24 horas hábiles.</p>
-      </div>
-      <div class="cta-actions">
-        <a href="mailto:contactos@consultoriaciv.cl?cc=cibanez@consultoriaciv.cl&subject=Solicitud%20de%20consulta%20estrat%C3%A9gica&body=Estimado%20equipo%20Consultor%C3%ADa%20CIV%2C%0A%0AMe%20interesa%20agendar%20una%20consulta%20estrat%C3%A9gica.%0A%0ANombre%3A%20%0AInstituci%C3%B3n%3A%20%0ACargo%3A%20%0A%C3%81rea%20de%20inter%C3%A9s%3A%20%0A%0AQuedo%20atento%20a%20su%20respuesta." class="btn-primary">Enviar solicitud de consulta →</a>
-      </div>
+<section id="contacto" style="padding: 100px 48px; max-width: 1100px; margin: 0 auto;">
+  <div style="background: var(--navy-card); border: 1px solid var(--navy-border); border-radius: 16px; padding: 64px; position: relative; overflow: hidden;">
+    
+    <div style="max-width: 600px; margin: 0 auto;">
+      <p class="section-label" style="margin-bottom: 12px;">// Hagamos algo grande juntos</p>
+      <h2 style="font-size: clamp(24px, 3vw, 36px); font-weight: 300; line-height: 1.2; color: var(--text-1); margin-bottom: 16px; letter-spacing: -0.01em;">Contacto</h2>
+      <p style="font-size: 14px; color: var(--text-2); font-weight: 300; line-height: 1.7; margin-bottom: 40px;">
+        No hay nada que nos guste más que ponernos manos a la obra y comenzar un nuevo proyecto. Complete los campos a continuación y nos comunicaremos a la brevedad.
+      </p>
+
+      <form action="https://formspree.io/f/xanypajb" method="POST" style="display: flex; flex-direction: column; gap: 24px;">
+        
+        <input type="hidden" name="_to" value="contactos@consultoriaciv.cl">
+        
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <label for="nombre" style="font-family: var(--mono); font-size: 11px; color: var(--text-2); letter-spacing: 0.05em; text-transform: uppercase;">Nombre completo *</label>
+          <input type="text" id="nombre" name="Nombre" required style="background: rgba(3,15,30,0.5); border: 1px solid var(--navy-border); border-radius: 6px; padding: 12px; color: var(--text-1); font-family: var(--sans); font-size: 14px; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--blue-vivid)'" onblur="this.style.borderColor='var(--navy-border)'">
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <label for="email" style="font-family: var(--mono); font-size: 11px; color: var(--text-2); letter-spacing: 0.05em; text-transform: uppercase;">Correo electrónico *</label>
+          <input type="email" id="email" name="Email" required style="background: rgba(3,15,30,0.5); border: 1px solid var(--navy-border); border-radius: 6px; padding: 12px; color: var(--text-1); font-family: var(--sans); font-size: 14px; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--blue-vivid)'" onblur="this.style.borderColor='var(--navy-border)'">
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <label for="empresa" style="font-family: var(--mono); font-size: 11px; color: var(--text-2); letter-spacing: 0.05em; text-transform: uppercase;">Empresa / Organización</label>
+          <input type="text" id="empresa" name="Empresa" style="background: rgba(3,15,30,0.5); border: 1px solid var(--navy-border); border-radius: 6px; padding: 12px; color: var(--text-1); font-family: var(--sans); font-size: 14px; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--blue-vivid)'" onblur="this.style.borderColor='var(--navy-border)'">
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <label for="mensaje" style="font-family: var(--mono); font-size: 11px; color: var(--text-2); letter-spacing: 0.05em; text-transform: uppercase;">Mensaje / Requerimiento *</label>
+          <textarea id="mensaje" name="Mensaje" rows="5" required style="background: rgba(3,15,30,0.5); border: 1px solid var(--navy-border); border-radius: 6px; padding: 12px; color: var(--text-1); font-family: var(--sans); font-size: 14px; outline: none; resize: vertical; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--blue-vivid)'" onblur="this.style.borderColor='var(--navy-border)'"></textarea>
+        </div>
+
+        <div style="margin-top: 8px;">
+          <button type="submit" class="btn-primary" style="cursor: pointer; border: none;">
+            Enviar mensaje ahora →
+          </button>
+        </div>
+
+      </form>
     </div>
+
   </div>
 </section>
 
