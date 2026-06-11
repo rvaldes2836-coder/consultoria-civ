@@ -456,10 +456,14 @@
     margin-bottom: 20px;
     color: var(--blue-light);
     font-size: 18px;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, transform 0.3s ease;
   }
 
-  .pillar:hover .pillar-icon { border-color: var(--blue-vivid); }
+  .pillar:hover .pillar-icon { 
+    border-color: var(--blue-vivid);
+    transform: scale(1.08) rotate(5deg);
+    color: var(--blue-glow);
+  }
 
   .pillar-title {
     font-size: 16px;
@@ -543,6 +547,13 @@
     margin-bottom: 24px;
     font-size: 22px;
     color: var(--blue-light);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .service-card:hover .service-icon-wrap {
+    transform: translateY(-4px) scale(1.05);
+    background: rgba(27,127,232,0.15);
+    border-color: var(--blue-vivid);
   }
 
   .service-title {
@@ -938,16 +949,6 @@
     top: 88px;
   }
 
-  .team-avatar-photo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center top;
-    border: 2px solid rgba(27,127,232,0.35);
-    margin-bottom: 8px;
-  }
-
   .team-avatar {
     width: 80px;
     height: 80px;
@@ -1088,6 +1089,7 @@
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
     <div class="nav-logo-mark"></div>
@@ -1104,6 +1106,7 @@
   </button>
 </nav>
 
+<!-- HERO -->
 <section>
   <div class="hero" id="nosotros">
     <div class="hero-eyebrow">Torre de control operativa · Banca & Finanzas</div>
@@ -1137,6 +1140,7 @@
     </div>
   </div>
 
+  <!-- MONITOR WIDGET -->
   <div class="hero-monitor">
     <div class="monitor-header">
       <span class="monitor-title">Torre de Control · Live</span>
@@ -1186,6 +1190,7 @@
   </div>
 </section>
 
+<!-- PILARES -->
 <section>
   <div class="pillars">
     <p class="section-label">// Por qué CIV</p>
@@ -1195,7 +1200,7 @@
         <div class="pillar-num">01</div>
         <div class="pillar-icon">⬡</div>
         <div class="pillar-title">Experiencia sectorial</div>
-        <p class="pillar-text">No somos una consultora genérica de TI. Llevamos más de 18 años operando dentro de la banca, entendiendo su normativa, reguladores y la presión que significa cada minute de indisponibilidad.</p>
+        <p class="pillar-text">No somos una consultora genérica de TI. Llevamos más de 18 años operando dentro de la banca, entendiendo su normativa, reguladores y la presión que significa cada minuto de indisponibilidad.</p>
       </div>
       <div class="pillar">
         <div class="pillar-num">02</div>
@@ -1215,6 +1220,7 @@
 
 <div class="section-divider"><hr></div>
 
+<!-- SERVICIOS -->
 <section id="servicios">
   <div class="services">
     <div class="services-header">
@@ -1229,7 +1235,7 @@
         <span class="service-num">01 / ARQUITECTURA</span>
         <div class="service-icon-wrap">⚙️</div>
         <h3 class="service-title">Torres de Control de Tesorería</h3>
-        <p class="service-desc">Centralización de monitoreo logístico y transaccional para redes de cajeros automáticos (ATM), bovedas corporativas y sucursales.</p>
+        <p class="service-desc">Centralización de monitoreo logístico y transaccional para redes de cajeros automáticos (ATM), bóvedas corporativas y sucursales.</p>
         <div class="service-tags">
           <span class="service-tag">Monitoreo Real-time</span>
           <span class="service-tag">Gobernanza</span>
@@ -1254,6 +1260,7 @@
 
 <div class="section-divider"><hr></div>
 
+<!-- CASOS EXCEPCIONALES (METRICAS) -->
 <section id="industria">
   <div class="cases">
     <p class="section-label">// Rendimiento probado</p>
@@ -1310,6 +1317,7 @@
 
 <div class="section-divider"><hr></div>
 
+<!-- CONTACTO -->
 <section id="contacto">
   <div class="cta-section">
     <div class="cta-block">
@@ -1343,6 +1351,7 @@
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-logo">
     CONSULTORÍA CIV · 
@@ -1368,7 +1377,6 @@
     btn.classList.toggle('open', open);
     btn.setAttribute('aria-expanded', open);
   });
-  // Close menu when a link is clicked
   menu.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       menu.classList.remove('open');
