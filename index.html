@@ -1549,7 +1549,7 @@
         No hay nada que nos guste más que ponernos manos a la obra y comenzar un nuevo proyecto. Complete los campos a continuación y nos comunicaremos a la brevedad.
       </p>
 
-      <form action="https://formspree.io/f/mojzljoj" method="POST" style="display: flex; flex-direction: column; gap: 24px;">     
+      <form id="contact-form" action="https://formspree.io/f/mojzljoj" method="POST" style="display: flex; flex-direction: column; gap: 24px;">    
       
        <input type="hidden" name="_to" value="contactos@consultoriaciv.cl">
         
@@ -1591,7 +1591,52 @@
 
       </form>
     </div>
-
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Detiene la recarga y la salida a la página gris
+    
+    const form = this;
+    const button = form.querySelector('button[type="submit"]');
+    const originalButtonText = button.innerHTML;
+    
+    // Cambia el estado del botón visualmente
+    button.disabled = true;
+    button.innerHTML = 'Enviando...';
+    
+    const formData = new FormData(form);
+    
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        // Éxito: el usuario se queda en tu web y el botón avisa el resultado
+        button.style.background = '#00c853'; 
+        button.innerHTML = '¡Mensaje enviado con éxito!';
+        form.reset(); // Limpia los campos automáticamente
+        
+        setTimeout(() => {
+          button.disabled = false;
+          button.style.background = '';
+          button.innerHTML = originalButtonText;
+        }, 5000);
+      } else {
+        throw new Error('Error en el envío');
+      }
+    })
+    .catch(error => {
+      // Manejo de errores sin romper la página
+      button.disabled = false;
+      button.style.background = '#d50000';
+      button.innerHTML = 'Error al enviar. Intente de nuevo.';
+    });
+  });
+</script>
+   
   </div>
 </section>
 
