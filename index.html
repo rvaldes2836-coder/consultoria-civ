@@ -1084,21 +1084,12 @@
       transform: none;
     }
   }
- /* Bloque para proteger la imagen de clic derecho */
-  .img-container {
-      position: relative;
-      display: inline-block;
-      line-height: 0;
-  }
-
-  .img-container .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      z-index: 10;
+ /* Bloque para proteger imagen sin romper el diseño */
+.team-card img {
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
   }
 </style>
 </head>
@@ -1244,8 +1235,8 @@
 
       <!-- TARJETA PERFIL -->
       <div class="team-card">
-            <div class="img-container"> <img src="data:image/jpeg;base64,..." alt="Carlos Ibáñez">
-            <div class="overlay"></div> </div>
+            <div class="team-card">
+            <img src="data:image/jpeg;base64,TU_CODIGO_BASE64_LARGO" alt="Carlos Ibáñez">
         <div class="team-name">Carlos Ibáñez Valdés</div>
       </div>
         <div class="team-role">Fundador &amp; Director de Consultoría</div>
